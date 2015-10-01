@@ -6,12 +6,15 @@ buildscript {
     dependencies {
     	classpath 'org.spockframework:spock-core:1.0-groovy-2.3'
     	classpath 'com.netflix.nebula:gradle-ospackage-plugin:2.0.2'
+    	classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'com.bmuschko.nexus'
 apply plugin: 'nebula.rpm'
+
 
 // JDK version source compatibility
 sourceCompatibility = 1.8
@@ -43,6 +46,10 @@ task app1Rpm(type: Rpm) {
             addParentDirs = false
         }
     }
-    
-    
 }
+
+ nexus {
+     sign = true
+     repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
+     snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
+ }
