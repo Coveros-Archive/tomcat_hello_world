@@ -31,17 +31,13 @@ war.baseName = 'hello-world'
         }
     }*/
 
-
-ospackage {
-    release '1'
-    os = LINUX // only applied to RPM
-    prefix '/opt/local' // also only applied to RPM
-    from '/build/libs'
-    into '/opt/helloworld'
-    
-}
-
 task app1Rpm(type: Rpm) {
     packageName = 'hello-world'
     arch = I386
+    release '1'
+    os = LINUX // only applied to RPM
+    prefix '/opt/local' // also only applied to RPM
+    into '/opt/helloworld'
+    
+    
 }
