@@ -48,6 +48,32 @@ task app1Rpm(type: Rpm) {
     }
 }
 
+ modifyPom {
+     project {
+         name 'Tomcat HelloWorld'
+         description 'Hello World app for Tomcat'
+         url 'https://github.com/Coveros/tomcat_hello_world'
+         inceptionYear '2015'
+
+         scm {
+             url 'https://github.com/Coveros/tomcat_hello_world'
+         }
+
+         developers {
+             developer {
+                 id 'devin909'
+                 name 'Devin Lee'
+                 email 'devin.lee@coveros.com'
+             }
+         }
+     }
+ }
+
+ extraArchive {
+     sources = false
+     tests = true
+     javadoc = false
+ }
  nexus {
      sign = true
      repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
