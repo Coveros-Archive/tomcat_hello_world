@@ -1,6 +1,9 @@
 buildscript {
     repositories {
     	jcenter()
+    	maven {
+        	url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
+    	}
     }
 
     dependencies {
@@ -79,12 +82,7 @@ task app1Rpm(type: Rpm) {
      repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
  }*/
- 
-repositories {
-    maven {
-        url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
-    }
-}
+
 
 publishing {
     publications {
