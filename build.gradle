@@ -47,7 +47,7 @@ task app1Rpm(type: Rpm) {
         }
     }
 }
-
+/*
  modifyPom {
      project {
          name 'Tomcat HelloWorld'
@@ -78,4 +78,31 @@ task app1Rpm(type: Rpm) {
      sign = true
      repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
- }
+ }*/
+ 
+apply plugin: 'maven'
+
+repositories {
+    maven {
+          url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/groups/public"
+    }
+}
+
+dependencies {
+    testCompile "junit:junit:3.8.1"
+    compile "org.jbundle.util:org.jbundle.util.jbackup:2.0.0"
+    compile "net.sf.webtestfixtures:webtestfixtures:2.0.1.3"
+}
+
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots") {
+             authentication(userName: "nexusguy", password: "coveros1")
+}
+             pom.version = "1.0-SNAPSHOT"
+             pom.artifactId = "hell-world-project"
+             pom.groupId = "com.coveros"
+       }
+    }
+}
