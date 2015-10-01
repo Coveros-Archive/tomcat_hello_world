@@ -2,7 +2,7 @@ buildscript {
     repositories {
     	jcenter()
     	maven {
-        	url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
+        	url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/groups/public/"
     	}
     }
 
@@ -99,14 +99,10 @@ publishing {
         maven {
             credentials {
                 username "nexusguy"
-                password "coveros1"
+                password "coves1"
             }
 
-            if(project.version.endsWith('-SNAPSHOT')) {
-                url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
-            } else {
-                url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/releases/"
-            }
+            url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
         }
     }
 }
