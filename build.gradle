@@ -1,14 +1,16 @@
 buildscript {
     repositories {
-    	mavenCentral()
+    	jcenter()
     }
 
     dependencies {
+    	classpath 'com.netflix.nebula:gradle-ospackage-plugin:1.12.2'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'nebula.ospackage-base'
 
 // JDK version source compatibility
 sourceCompatibility = 1.8
@@ -27,3 +29,20 @@ war.baseName = 'hello-world'
             }
         }
     }*/
+
+
+ospackage {
+    release '1'
+    os = LINUX // only applied to RPM
+    prefix '/opt/local' // also only applied to RPM
+    into '/opt/helloworld'
+    from ('dist') {
+        user 'builds'
+        exclude '**/*.rb'
+    }
+}
+
+task app1Rpm(type: Rpm) {
+    packageName = 'hello-world'
+    arch = I386
+}
