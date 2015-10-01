@@ -13,23 +13,6 @@ buildscript {
 //apply plugin: 'war'
 apply plugin: 'nebula.rpm'
 
-// JDK version source compatibility
-sourceCompatibility = 1.8
-// project version
-version = '1.0'
-// War file name
-war.baseName = 'hello-world'
-// Web directory, this overrides the default value "webapp"
-// project.webAppDirName = 'WebContent'
-
-// Set source directory
-/*sourceSets {
-        main {
-            java {
-                srcDir 'src'
-            }
-        }
-    }*/
 
 task app1Rpm(type: Rpm) {
     packageName 'hello-world'
