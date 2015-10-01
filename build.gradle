@@ -9,8 +9,8 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'war'
+//apply plugin: 'java'
+//apply plugin: 'war'
 apply plugin: 'nebula.rpm'
 
 // JDK version source compatibility
