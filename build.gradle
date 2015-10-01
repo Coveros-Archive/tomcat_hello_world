@@ -100,6 +100,11 @@ publishing {
 publishing {
 	repositories {
         maven {
+        	credentials {
+                username "nexusguy"
+                password "coveros1"
+            }
+        	
             // change to point to your repo, e.g. http://my.org/repo
             url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
         }
