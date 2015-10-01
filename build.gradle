@@ -83,26 +83,24 @@ task app1Rpm(type: Rpm) {
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
  }*/
 
-
 publishing {
     publications {
-        maven(MavenPublication) {
-            groupId 'com.coveros'
-            version '1.0.0'
-        }
-        mavenWeb(MavenPublication) {
-        	from components.web
-    	}
-    } 
-
-    repositories {  
-        maven {
-            credentials {
-                username "nexusguy"
-                password "coves1"
+        mavenJava(MavenPublication) {
+        	groupId 'com.coveros'
+            artifactId 'hello-world-sample'
+            version '1.0'
+            
+            from components.web
+            artifact app1Rpm {
+                classifier "rpm"
             }
-
-            url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
         }
     }
 }
+publishing {
+	repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
+        }
+    }
