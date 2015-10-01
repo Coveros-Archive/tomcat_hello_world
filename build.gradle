@@ -12,8 +12,8 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'com.bmuschko.nexus'
 apply plugin: 'nebula.rpm'
+apply plugin: 'maven-publish'
 
 
 // JDK version source compatibility
@@ -80,27 +80,35 @@ task app1Rpm(type: Rpm) {
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
  }*/
  
-apply plugin: 'maven'
-
 repositories {
     maven {
-          url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/groups/public"
+        url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/"
     }
 }
 
-dependencies {
-    apply plugin: 'war'
-}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.coveros'
+            version '1.0.0'
+        }
+        mavenWeb(MavenPublication) {
+        	from components.web
+    	}
+    } 
 
-uploadArchives {
-    repositories {
-       mavenDeployer {
-             repository(url: "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots") {
-             authentication(userName: "nexusguy", password: "coveros1")
-}
-             pom.version = "1.0-SNAPSHOT"
-             pom.artifactId = "hell-world-project"
-             pom.groupId = "com.coveros"
-       }
+    repositories {  
+        maven {
+            credentials {
+                username "nexusguy"
+                password "coveros1"
+            }
+
+            if(project.version.endsWith('-SNAPSHOT')) {
+                url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
+            } else {
+                url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/releases/"
+            }
+        }
     }
 }
