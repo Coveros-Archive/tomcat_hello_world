@@ -32,7 +32,7 @@ apply plugin: 'maven-publish'
 // JDK version source compatibility
 sourceCompatibility = 1.8
 // project version
-version = '1.0'
+version = '1.0.1'
 // War file name
 war.baseName = 'hello-world'
 // Web directory, this overrides the default value "webapp"
@@ -120,3 +120,8 @@ publishing {
         }
     }
 }
+
+test {
+      testResultsDir = rootProject.testResultsDir
+       //testReportDir = rootProject.testReportDir
+     }
