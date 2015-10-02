@@ -1,6 +1,7 @@
 buildscript {
     repositories {
     	jcenter()
+    	mavenCentral()
     	maven {
         	url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/groups/public/"
     	}
