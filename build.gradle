@@ -121,7 +121,8 @@ publishing {
     }
 }
 
-test {
-      testResultsDir = rootProject.testResultsDir
-       //testReportDir = rootProject.testReportDir
-     }
+task testReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/allTests")
+    // Include the results from the `test` task in all subprojects
+    reportOn *.test
+}
