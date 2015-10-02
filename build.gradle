@@ -97,7 +97,7 @@ publishing {
     publications {
         helloWorld(MavenPublication) {
         	groupId 'com.coveros'
-            artifactId 'hello-world-sample'
+            artifactId 'hello-world-sample-random-gen'
             version '1.0'
             
             from components.web
