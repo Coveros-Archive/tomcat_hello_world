@@ -32,7 +32,7 @@ apply plugin: 'maven-publish'
 // JDK version source compatibility
 sourceCompatibility = 1.8
 // project version
-version = '1.0.1'
+version = '1.0.2'
 // War file name
 war.baseName = 'hello-world'
 // Web directory, this overrides the default value "webapp"
@@ -49,7 +49,7 @@ war.baseName = 'hello-world'
 
 task app1Rpm(type: Rpm) {
     packageName 'hello-world'
-    version '1.0.1'
+    version '1.0.2'
     arch I386
     os LINUX
     into ('/usr/share/tomcat/webapps/') {
@@ -98,7 +98,7 @@ publishing {
         helloWorld(MavenPublication) {
         	groupId 'com.coveros'
             artifactId 'hello-world-sample-random-gen'
-            version '1.0.1'
+            version '1.0.2'
             
             from components.web
             artifact app1Rpm {
