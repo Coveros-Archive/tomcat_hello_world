@@ -101,8 +101,8 @@ publishing {
 	repositories {
         maven {
         	credentials {
-                username "nexusguy"
-                password "coveros1"
+                username "admin"
+                password "admin123"
             }
         	
             // change to point to your repo, e.g. http://my.org/repo
