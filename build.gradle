@@ -97,12 +97,12 @@ publishing {
     publications {
         helloWorld(MavenPublication) {
         	groupId 'com.coveros'
-            artifactId 'hello-world-sample-random-gen'
+            artifactId 'hello-world-sample-random-gen-rpm'
             version '1.0.2-SNAPSHOT'
             
-            from components.web
+            //from components.web
             artifact app1Rpm {
-                classifier "rpm"
+                classifier "rpm", extension "rpm"
             }
         }
     }
