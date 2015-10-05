@@ -101,7 +101,7 @@ publishing {
             version '1.0.2-SNAPSHOT'
             
             //from components.web
-            artifact app1Rpm {
+            artifact (app1Rpm) {
                 classifier "rpm", extension "rpm"
             }
         }
