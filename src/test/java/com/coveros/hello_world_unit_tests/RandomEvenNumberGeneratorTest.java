@@ -10,6 +10,6 @@ public class RandomEvenNumberGeneratorTest {
    public void testRandomEvenNumberGenerator() {
       int randomResult = RandomEvenNumberGenerator.generateRandomEven();
       
-      assertEquals(1,randomResult%2);
+      assertEquals(0,randomResult%2);
    }
 }
