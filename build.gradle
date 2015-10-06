@@ -24,10 +24,17 @@ dependencies {
 }
 
 
+apply plugin: "jacoco"
 apply plugin: 'war'
 apply plugin: 'nebula.rpm'
 apply plugin: 'maven-publish'
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+    }
+}
 
 // JDK version source compatibility
 sourceCompatibility = 1.8
