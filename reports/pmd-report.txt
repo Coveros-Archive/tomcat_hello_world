@@ -1,0 +1,4 @@
+src/main/java/com/coveros/hello_world/RandomEvenNumberGenerator.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/main/java/com/coveros/hello_world/RandomEvenNumberGenerator.java:5:	headerCommentRequirement Required
+src/main/java/com/coveros/hello_world/RandomEvenNumberGenerator.java:6:	publicMethodCommentRequirement Required
+src/main/java/com/coveros/hello_world/RandomEvenNumberGenerator.java:7:	Local variable 'randomGenerator' could be declared final

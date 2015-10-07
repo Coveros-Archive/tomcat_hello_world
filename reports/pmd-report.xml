@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.3.2" timestamp="2015-10-07T15:11:27.111">
+<file name="src/main/java/com/coveros/hello_world/RandomEvenNumberGenerator.java">
+<violation beginline="5" endline="15" begincolumn="0" endcolumn="0" rule="UseUtilityClass" ruleset="Design" package="com.coveros.hello_world" class="RandomEvenNumberGenerator" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/design.html#UseUtilityClass" priority="3">
+All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+</violation>
+<violation beginline="5" endline="15" begincolumn="0" endcolumn="0" rule="CommentRequired" ruleset="Comments" package="com.coveros.hello_world" class="RandomEvenNumberGenerator" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/comments.html#CommentRequired" priority="3">
+headerCommentRequirement Required
+</violation>
+<violation beginline="6" endline="14" begincolumn="0" endcolumn="0" rule="CommentRequired" ruleset="Comments" package="com.coveros.hello_world" class="RandomEvenNumberGenerator" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/comments.html#CommentRequired" priority="3">
+publicMethodCommentRequirement Required
+</violation>
+<violation beginline="7" endline="7" begincolumn="0" endcolumn="0" rule="LocalVariableCouldBeFinal" ruleset="Optimization" package="com.coveros.hello_world" class="RandomEvenNumberGenerator" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.3.2/pmd-java/rules/java/optimizations.html#LocalVariableCouldBeFinal" priority="3">
+Local variable 'randomGenerator' could be declared final
+</violation>
+</file>
+</pmd>
