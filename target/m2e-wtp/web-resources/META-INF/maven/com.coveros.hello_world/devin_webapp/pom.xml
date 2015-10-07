@@ -4,7 +4,7 @@
   <groupId>com.coveros.hello_world</groupId>
   <artifactId>devin_webapp</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.2-SNAPSHOT</version>
   <name>Hello World App</name>
   <url>http://maven.apache.org</url>
   <dependencies>
