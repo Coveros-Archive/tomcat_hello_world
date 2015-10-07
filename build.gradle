@@ -132,7 +132,7 @@ publishing {
 }
 pmd {
   ignoreFailures = false
-  sourceSets = [project.sourceSets]
+  sourceSets = [sourceSets.main, sourceSets.test]
   reportsDir = file("$project.buildDir/reports/pmd")
   ruleSets = [
     "java-basic", 
