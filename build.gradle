@@ -136,7 +136,8 @@ pmd {
   reportsDir = file("$project.buildDir/reports/pmd")
   ruleSets = [
     "java-basic", 
-    "java-braces"
+    "java-braces",
+    "java-comments"
   ]
 }
 
