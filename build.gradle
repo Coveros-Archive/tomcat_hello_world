@@ -29,6 +29,7 @@ apply plugin: 'war'
 apply plugin: 'nebula.rpm'
 apply plugin: 'maven-publish'
 apply plugin: 'pmd'
+apply plugin: "findbugs"
 apply plugin: "sonar-runner"
 
 jacocoTestReport {
