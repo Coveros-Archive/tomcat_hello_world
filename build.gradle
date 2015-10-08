@@ -2,7 +2,7 @@ buildscript {
     repositories {
     	jcenter()
     	maven {
-        	url "http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/groups/public/"
+        	url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/groups/public/"
     	}
     }
 
@@ -128,7 +128,7 @@ publishing {
             }
         	
             // change to point to your repo, e.g. http://my.org/repo
-            url "http://ec2-52-91-228-180.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
+            url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
         }
     }
 }
@@ -145,10 +145,10 @@ pmd {
 
 sonarRunner {
     sonarProperties {
-        property "sonar.host.url", "http://ec2-52-91-228-180.compute-1.amazonaws.com:9000"
+        property "sonar.host.url", "http://ec2-54-210-118-101.compute-1.amazonaws.com:9000"
         property "sonar.username", "admin"
         property "sonar.password", "admin"
-        property "sonar.jdbc.url", "jdbc:mysql://ec2-52-91-228-180.compute-1.amazonaws.com:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
+        property "sonar.jdbc.url", "jdbc:mysql://ec2-54-210-118-101.compute-1.amazonaws.com:3306/sonar?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
         property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
         property "sonar.jdbc.username", "sonarqube"
         property "sonar.jdbc.password", "coveros1"
