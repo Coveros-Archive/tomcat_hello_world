@@ -11,4 +11,12 @@ public class RandomEvenNumberGenerator {
 		}
 		return result;
 	}
+	public static int generateRandomOdd(){
+		Random randomGenerator = new Random();
+		int result = randomGenerator.nextInt();
+		if (result%2!=1){
+			result++;
+		}
+		return result;
+	}
 }
