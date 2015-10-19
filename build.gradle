@@ -40,6 +40,8 @@ jacocoTestReport {
     }
 }
 
+//testing git push hook
+
 // JDK version source compatibility
 sourceCompatibility = 1.8
 // project version
