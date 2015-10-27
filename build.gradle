@@ -27,7 +27,7 @@ dependencies {
 apply plugin: "jacoco"
 apply plugin: 'war'
 apply plugin: 'nebula.rpm'
-apply plugin: 'maven-publish'
+//apply plugin: 'maven-publish'
 apply plugin: 'pmd'
 apply plugin: "findbugs"
 apply plugin: 'checkstyle'
@@ -73,6 +73,26 @@ task app1Rpm(type: Rpm) {
         }
     }
 }
+
+//UPLOAD ARCHIVES STUFF USE THIS OR MAVEN STUFF
+artifacts {
+    archives app1Rpm
+}
+
+uploadArchives {
+    repositories {
+        maven {
+        	credentials {
+                username "admin"
+                password "admin123"
+            }
+        	
+            // change to point to your repo, e.g. http://my.org/repo
+            url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
+    	}
+    }
+}
+
 /*
  modifyPom {
      project {
@@ -105,8 +125,12 @@ task app1Rpm(type: Rpm) {
      repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
  }*/
+ 
+ 
 
-publishing {
+
+//MAVEN PUBLISH STUFF
+/*publishing {
     publications {
         helloWorld(MavenPublication) {
         	groupId 'com.coveros'
@@ -133,7 +157,7 @@ publishing {
             url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
         }
     }
-}
+}*/
 pmd {
   ignoreFailures = true
   //sourceSets = ['src/main', 'src/test']
