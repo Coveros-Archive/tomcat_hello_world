@@ -78,7 +78,7 @@ task app1Rpm(type: Rpm) {
 artifacts {
     archives app1Rpm
 }
-
+//new comment
 uploadArchives {
     repositories {
         maven {
