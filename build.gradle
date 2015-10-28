@@ -92,7 +92,7 @@ uploadArchives {
     	}
     }
 }
-
+// Some comment
 /*
  modifyPom {
      project {
