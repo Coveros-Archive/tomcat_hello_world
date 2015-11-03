@@ -63,7 +63,7 @@ war.baseName = 'hello-world'
 task app1Rpm(type: Rpm) {
     packageName 'hello-world'
     version '1.0.2'
-    arch NOARCH
+    arch I386
     os LINUX
     into ('/usr/share/tomcat/webapps/') {
 //      into ('/var/lib/tomcat/webapps') {
