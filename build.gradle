@@ -1,5 +1,6 @@
 buildscript {
     repositories {
+      mavenCentral()
     	jcenter()
     	maven {
         	url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/groups/public/"
@@ -86,7 +87,7 @@ uploadArchives {
                 username "admin"
                 password "admin123"
             }
-        	
+
             // change to point to your repo, e.g. http://my.org/repo
             url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots"
     	}
@@ -125,8 +126,8 @@ uploadArchives {
      repositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/'
      snapshotRepositoryUrl = 'http://ec2-54-208-196-52.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/'
  }*/
- 
- 
+
+
 
 
 //MAVEN PUBLISH STUFF
@@ -136,7 +137,7 @@ uploadArchives {
         	groupId 'com.coveros'
             artifactId 'hello-world-sample-random-gen-rpm'
             version '1.0.2-SNAPSHOT'
-            
+
             //from components.web
             artifact (app1Rpm) {
                 classifier "rpm"
@@ -152,7 +153,7 @@ publishing {
                 username "admin"
                 password "admin123"
             }
-        	
+
             // change to point to your repo, e.g. http://my.org/repo
             url "http://ec2-54-210-118-101.compute-1.amazonaws.com:8081/nexus/content/repositories/snapshots/"
         }
@@ -163,7 +164,7 @@ pmd {
   //sourceSets = ['src/main', 'src/test']
   reportsDir = file("$project.buildDir/reports/pmd")
   ruleSets = [
-    "java-basic", 
+    "java-basic",
     "java-braces",
     "java-comments"
   ]
