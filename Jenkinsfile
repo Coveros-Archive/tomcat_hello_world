@@ -3,6 +3,7 @@ pipeline {
     tools {
         maven 'Maven 3.5.0'
         jdk 'JDK 8u144'
+        sonar 'Sonar 3.0'
     }
     stages {
         stage('Build') {
@@ -11,11 +12,17 @@ pipeline {
                 sh "mvn compile"
             }
         }
-        stage('Test') {
+        stage('Developer Tests') {
             steps {
                 echo 'Testing..'
                 sh 'mvn test'
             }
+        }
+        stage('Static Analysis') {
+          steps {
+              echo 'Analyzing source code'
+              sh 'mvn sonar:sonar'
+          }
         }
         stage('Deploy') {
             steps {

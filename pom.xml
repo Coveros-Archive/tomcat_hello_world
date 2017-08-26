@@ -7,6 +7,33 @@
   <version>1.0.2-SNAPSHOT</version>
   <name>Hello World App</name>
   <url>http://maven.apache.org</url>
+  <!-- <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+  -->
+  <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.projectKey>
+                  hello-world
+                </sonar.projectKey>
+                <sonar.sources>
+                  src/main/java
+                </sonar.sources>
+                <sonar.login>
+                  11e559a1ae02be0fe2a5c55f984ea0f6b6451882
+                </sonar.login>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                  https://ci.odds.secureci.com/sonar
+                </sonar.host.url>
+            </properties>
+        </profile>
+     </profiles>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -18,7 +45,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    
+
   </dependencies>
   <build>
     <finalName>hello-world-sample-random-gen-rpm</finalName>
