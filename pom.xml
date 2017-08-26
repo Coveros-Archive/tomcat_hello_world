@@ -11,6 +11,14 @@
         <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
     </pluginGroups>
   -->
+  <!--<servers>
+   <server>
+      <id>nexus-snapshots</id>
+      <username>jenkins</username>
+      <password>JenkinS</password>
+   </server>
+  </servers>
+-->
   <profiles>
         <profile>
             <id>sonar</id>
@@ -38,6 +46,12 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  <distributionManagement>
+   <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>https://ci.odds.secureci.com/nexus/repository/maven-snapshots</url>
+   </snapshotRepository>
+</distributionManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
