@@ -11,11 +11,11 @@ pipeline {
                 sh "mvn compile"
             }
         }
-	stage('Nexus Scan') {
-	    steps {
-		nexusPolicyEvaluation iqApplication: 'sandbox-application', iqStage: 'build'
-            }
-	}
+//	stage('Nexus Scan') {
+//	    steps {
+//		nexusPolicyEvaluation iqApplication: 'sandbox-application', iqStage: 'build'
+  //          }
+//	}
         stage('Developer Tests') {
             steps {
                 echo 'Testing..'
@@ -31,8 +31,14 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'mvn package deploy'
+                sh 'mvn package'
             }
         }
+	stage('Nexus Scan') {
+            steps {
+                nexusPolicyEvaluation iqApplication: 'sandbox-application', iqStage: 'build'
+            }
+        }
+
     }
 }
