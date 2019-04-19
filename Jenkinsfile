@@ -11,6 +11,11 @@ pipeline {
                 sh "mvn compile"
             }
         }
+	stage('Nexus Scan') {
+	    steps {
+		nexusPolicyEvaluation iqApplication: 'sandbox-application', iqStage: 'build'
+            }
+	}
         stage('Developer Tests') {
             steps {
                 echo 'Testing..'
