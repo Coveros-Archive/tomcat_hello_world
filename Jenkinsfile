@@ -22,12 +22,12 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Static Analysis') {
-          steps {
-              echo 'Analyzing source code'
-              sh 'mvn sonar:sonar'
-          }
-        }
+//        stage('Static Analysis') {
+//          steps {
+//              echo 'Analyzing source code'
+//              sh 'mvn sonar:sonar'
+//          }
+//        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
